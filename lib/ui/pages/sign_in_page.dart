@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/widgets/button.dart';
+import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
@@ -44,50 +46,12 @@ class SignInPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // NOTE: EMAIL INPUT
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
-                ),
+                CustomFormField(title: 'Email Address'),
                 SizedBox(height: 16),
                 // NOTE: PASSWORD
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
+                CustomFormField(
+                  title: 'Password',
+                  obscureText: true,
                 ),
                 SizedBox(height: 8),
                 Align(
@@ -100,45 +64,17 @@ class SignInPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 30),
-                SizedBox(
-                  height: 50,
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      backgroundColor: purpleColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(56),
-                      ),
-                    ),
-                    child: Text(
-                      'Sign In',
-                      style: whiteTextStyle.copyWith(
-                        fontWeight: semibold,
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
+                CustomFilledButton(
+                  title: 'Sign In',
+                  onPressed: () {},
                 ),
               ],
             ),
           ),
           SizedBox(height: 50),
-          SizedBox(
-            width: double.infinity,
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
-              ),
-              child: Text(
-                'Create New Account',
-                style: greyTextStyle.copyWith(
-                  fontWeight: regular,
-                  fontSize: 16,
-                ),
-              ),
-            ),
+          CustomTextButton(
+            title: 'Create New Account',
+            onPressed: () {},
           ),
         ],
       ),
