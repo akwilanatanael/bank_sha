@@ -1,12 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:bank_sha/shared/theme.dart';
-import 'package:bank_sha/ui/widgets/button.dart';
-import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key}) : super(key: key);
+import '../widgets/button.dart';
+import '../widgets/forms.dart';
+
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class SignInPage extends StatelessWidget {
               top: 100,
               bottom: 100,
             ),
+            // ignore: prefer_const_constructors
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/img_logo_light.png'),
@@ -29,7 +31,7 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Sign In &\nGrow Your Finance',
+            'Join Us to Unlock\nYour Growth',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semibold,
@@ -45,37 +47,29 @@ class SignInPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // NOTE: EMAIL INPUT
+                // NOTE: FULL NAME INPUT
+                CustomFormField(title: 'Full Name'),
+                SizedBox(height: 16),
+                // NOTE : EMAIL INPUT
                 CustomFormField(title: 'Email Address'),
                 SizedBox(height: 16),
-                // NOTE: PASSWORD
-                CustomFormField(
-                  title: 'Password',
-                  obscureText: true,
-                ),
-                SizedBox(height: 8),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password',
-                    style: blueTextStyle.copyWith(
-                      fontWeight: regular,
-                    ),
-                  ),
-                ),
+                // NOTE: PASSWORD INPUT
+                CustomFormField(title: 'Password', obscureText: true),
                 SizedBox(height: 30),
                 CustomFilledButton(
-                  title: 'Sign In',
-                  onPressed: () {},
+                  title: 'Continue',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up-set-profile');
+                  },
                 ),
               ],
             ),
           ),
           SizedBox(height: 50),
           CustomTextButton(
-            title: 'Create New Account',
+            title: 'Sign In',
             onPressed: () {
-              Navigator.pushNamed(context, '/sign-up');
+              Navigator.pushNamed(context, '/sign-in');
             },
           ),
         ],
