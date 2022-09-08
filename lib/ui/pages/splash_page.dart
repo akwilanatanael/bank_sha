@@ -19,12 +19,7 @@ class _SplashPageState extends State<SplashPage> {
     Timer(
       const Duration(seconds: 2),
       () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OnBoardingPage(),
-          ),
-        );
+        Navigator.pushNamed(context, '/onboarding');
       },
     );
   }
