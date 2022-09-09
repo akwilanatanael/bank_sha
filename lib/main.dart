@@ -1,4 +1,7 @@
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/pages/buy_choose_data_page.dart';
+import 'package:bank_sha/ui/pages/buy_data_page.dart';
+import 'package:bank_sha/ui/pages/buy_data_success_page.dart';
 import 'package:bank_sha/ui/pages/home_page.dart';
 import 'package:bank_sha/ui/pages/onboarding_page.dart';
 import 'package:bank_sha/ui/pages/pin_page.dart';
@@ -59,6 +62,9 @@ class MyApp extends StatelessWidget {
         '/transfer': (context) => const TransferPage(),
         '/transfer-amount': (context) => const TransferAmountPage(),
         '/transfer-success': (context) => const TransferSuccessPage(),
+        '/data': (context) => const BuyDataPage(),
+        '/choose-data': (context) => const BuyChooseDataPage(),
+        '/buy-data-success': (context) => const BuyDataSuccessPage(),
         '/profile': (context) => const ProfilePage(),
         '/pin': (context) => const PinPage(),
         '/profile-edit': (context) => const ProfileEditPage(),

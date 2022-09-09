@@ -4,6 +4,7 @@ import 'package:bank_sha/ui/widgets/home_latest_transaction_item.dart';
 import 'package:bank_sha/ui/widgets/home_service_item.dart';
 import 'package:bank_sha/ui/widgets/home_tips_item.dart';
 import 'package:bank_sha/ui/widgets/home_user_item.dart';
+import 'package:bank_sha/ui/widgets/more_service_item.dart';
 import 'package:flutter/material.dart';
 import 'package:bank_sha/shared/theme.dart';
 
@@ -298,7 +299,12 @@ class HomePage extends StatelessWidget {
               HomeServiceItem(
                 iconUrl: 'assets/ic_more.png',
                 title: 'More',
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const MoreDialog(),
+                  );
+                },
               ),
             ],
           )
@@ -456,6 +462,74 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MoreDialog extends StatelessWidget {
+  const MoreDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: EdgeInsets.zero,
+      alignment: Alignment.bottomCenter,
+      content: Container(
+        height: 326,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+          color: lightBackgroundColor,
+        ),
+        child: Container(
+          margin: EdgeInsets.all(30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Do More With Us',
+                style:
+                    blackTextStyle.copyWith(fontWeight: medium, fontSize: 16),
+              ),
+              SizedBox(height: 13),
+              Wrap(
+                spacing: 29,
+                runSpacing: 29,
+                children: [
+                  MoreServiceItem(
+                    imageUrl: 'assets/ic_product_data.png',
+                    title: 'Data',
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/data');
+                    },
+                  ),
+                  MoreServiceItem(
+                    imageUrl: 'assets/ic_product_water.png',
+                    title: 'Water',
+                  ),
+                  MoreServiceItem(
+                    imageUrl: 'assets/ic_product_stream.png',
+                    title: 'Stream',
+                  ),
+                  MoreServiceItem(
+                    imageUrl: 'assets/ic_product_movie.png',
+                    title: 'Movie',
+                  ),
+                  MoreServiceItem(
+                    imageUrl: 'assets/ic_product_food.png',
+                    title: 'Food',
+                  ),
+                  MoreServiceItem(
+                    imageUrl: 'assets/ic_product_travel.png',
+                    title: 'Travel',
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
