@@ -70,16 +70,20 @@ class ProfilePage extends StatelessWidget {
                     iconUrl: 'assets/ic_edit_profile.png',
                     title: 'Edit Profile',
                     margin: EdgeInsets.only(bottom: 30),
-                    onTap: () {
-                      Navigator.pushNamed(context, '/pin');
+                    onTap: () async {
+                      if (await Navigator.pushNamed(context, '/pin') == true) {
+                        Navigator.pushNamed(context, '/profile-edit');
+                      }
                     },
                   ),
                   ProfileMenuItem(
                     iconUrl: 'assets/ic_my_pin.png',
                     title: 'My PIN',
                     margin: EdgeInsets.only(bottom: 30),
-                    onTap: () {
-                      Navigator.pushNamed(context, '/pin');
+                    onTap: () async {
+                      if (await Navigator.pushNamed(context, '/pin') == true) {
+                        Navigator.pushNamed(context, '/profile-edit-pin');
+                      }
                     },
                   ),
                   ProfileMenuItem(
