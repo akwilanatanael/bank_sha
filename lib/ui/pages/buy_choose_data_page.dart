@@ -4,7 +4,6 @@ import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/button.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:bank_sha/ui/widgets/provider_item.dart';
-import 'package:bank_sha/ui/widgets/send_user_item.dart';
 import 'package:flutter/material.dart';
 
 class BuyChooseDataPage extends StatelessWidget {
@@ -37,7 +36,11 @@ class BuyChooseDataPage extends StatelessWidget {
             title: 'Continue',
             onPressed: () async {
               if (await Navigator.pushNamed(context, '/pin') == true) {
-                Navigator.pushNamed(context, '/buy-data-success');
+                Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/buy-data-success',
+                  (route) => false,
+                );
               }
             },
           ),
@@ -65,21 +68,21 @@ class BuyChooseDataPage extends StatelessWidget {
             runSpacing: 17,
             children: [
               ProviderPackageItem(
-                title: '10 GB',
-                subtitle: 'Rp 218.000',
+                amount: 10,
+                price: 218000,
               ),
               ProviderPackageItem(
-                title: '25 GB',
-                subtitle: 'Rp 218.000',
+                amount: 10,
+                price: 218000,
               ),
               ProviderPackageItem(
-                title: '40 GB',
-                subtitle: 'Rp 218.000',
+                amount: 40,
+                price: 218000,
                 isSelected: true,
               ),
               ProviderPackageItem(
-                title: '99 GB',
-                subtitle: 'Rp 218.000',
+                amount: 99,
+                price: 218000,
               ),
             ],
           ),

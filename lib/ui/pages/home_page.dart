@@ -479,56 +479,56 @@ class MoreDialog extends StatelessWidget {
       content: Container(
         height: 326,
         width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.all(30),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           color: lightBackgroundColor,
         ),
-        child: Container(
-          margin: EdgeInsets.all(30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Do More With Us',
-                style:
-                    blackTextStyle.copyWith(fontWeight: medium, fontSize: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Do More With Us',
+              style: blackTextStyle.copyWith(
+                fontWeight: medium,
+                fontSize: 16,
               ),
-              SizedBox(height: 13),
-              Wrap(
-                spacing: 29,
-                runSpacing: 29,
-                children: [
-                  MoreServiceItem(
-                    imageUrl: 'assets/ic_product_data.png',
-                    title: 'Data',
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/data');
-                    },
-                  ),
-                  MoreServiceItem(
-                    imageUrl: 'assets/ic_product_water.png',
-                    title: 'Water',
-                  ),
-                  MoreServiceItem(
-                    imageUrl: 'assets/ic_product_stream.png',
-                    title: 'Stream',
-                  ),
-                  MoreServiceItem(
-                    imageUrl: 'assets/ic_product_movie.png',
-                    title: 'Movie',
-                  ),
-                  MoreServiceItem(
-                    imageUrl: 'assets/ic_product_food.png',
-                    title: 'Food',
-                  ),
-                  MoreServiceItem(
-                    imageUrl: 'assets/ic_product_travel.png',
-                    title: 'Travel',
-                  ),
-                ],
-              ),
-            ],
-          ),
+            ),
+            SizedBox(height: 13),
+            Wrap(
+              spacing: 29,
+              runSpacing: 29,
+              children: [
+                MoreServiceItem(
+                  imageUrl: 'assets/ic_product_data.png',
+                  title: 'Data',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/data');
+                  },
+                ),
+                MoreServiceItem(
+                  imageUrl: 'assets/ic_product_water.png',
+                  title: 'Water',
+                ),
+                MoreServiceItem(
+                  imageUrl: 'assets/ic_product_stream.png',
+                  title: 'Stream',
+                ),
+                MoreServiceItem(
+                  imageUrl: 'assets/ic_product_movie.png',
+                  title: 'Movie',
+                ),
+                MoreServiceItem(
+                  imageUrl: 'assets/ic_product_food.png',
+                  title: 'Food',
+                ),
+                MoreServiceItem(
+                  imageUrl: 'assets/ic_product_travel.png',
+                  title: 'Travel',
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

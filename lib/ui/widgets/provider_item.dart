@@ -26,10 +26,12 @@ class ProviderItem extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: whiteColor,
-        border: Border.all(
-          width: 2,
-          color: isSelected ? blueColor : whiteColor,
-        ),
+        border: isSelected
+            ? Border.all(
+                width: 2,
+                color: blueColor,
+              )
+            : null,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,13 +67,13 @@ class ProviderItem extends StatelessWidget {
 }
 
 class ProviderPackageItem extends StatelessWidget {
-  final String title;
-  final String subtitle;
+  final int amount;
+  final int price;
   final bool isSelected;
   const ProviderPackageItem({
     Key? key,
-    required this.title,
-    required this.subtitle,
+    required this.amount,
+    required this.price,
     this.isSelected = false,
   }) : super(key: key);
 
@@ -92,7 +94,7 @@ class ProviderPackageItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            title,
+            '${amount}GB',
             style: blackTextStyle.copyWith(
               fontWeight: medium,
               fontSize: 32,
@@ -102,7 +104,7 @@ class ProviderPackageItem extends StatelessWidget {
             height: 2,
           ),
           Text(
-            '@$subtitle',
+            '@price',
             style: greyTextStyle.copyWith(
               fontWeight: regular,
               fontSize: 12,

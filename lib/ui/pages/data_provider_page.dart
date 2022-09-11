@@ -30,7 +30,7 @@ class BuyDataPage extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/img_wallet.png',
-                height: 55,
+                width: 80,
               ),
               SizedBox(width: 16),
               Column(
@@ -81,7 +81,7 @@ class BuyDataPage extends StatelessWidget {
             subtitle: 'Available',
           ),
           SizedBox(
-            height: 50,
+            height: 135,
           ),
           CustomFilledButton(
             title: 'Continue',
@@ -90,7 +90,7 @@ class BuyDataPage extends StatelessWidget {
             },
           ),
           SizedBox(
-            height: 150,
+            height: 57,
           ),
         ],
       ),
