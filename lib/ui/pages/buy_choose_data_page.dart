@@ -73,16 +73,16 @@ class BuyChooseDataPage extends StatelessWidget {
               ),
               ProviderPackageItem(
                 amount: 10,
-                price: 218000,
+                price: 420000,
               ),
               ProviderPackageItem(
                 amount: 40,
-                price: 218000,
+                price: 2500000,
                 isSelected: true,
               ),
               ProviderPackageItem(
                 amount: 99,
-                price: 218000,
+                price: 5000000,
               ),
             ],
           ),

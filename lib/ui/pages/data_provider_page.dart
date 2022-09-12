@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:bank_sha/shared/shared_methods.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/button.dart';
 import 'package:bank_sha/ui/widgets/provider_item.dart';
@@ -45,7 +46,7 @@ class BuyDataPage extends StatelessWidget {
                   ),
                   SizedBox(height: 2),
                   Text(
-                    'Balance Rp 12.500',
+                    'Balance: ${formatCurrency(12500)}',
                     style: greyTextStyle.copyWith(
                       fontSize: 12,
                       fontWeight: regular,

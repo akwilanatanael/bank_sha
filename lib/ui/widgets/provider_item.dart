@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:bank_sha/shared/shared_methods.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -104,7 +105,7 @@ class ProviderPackageItem extends StatelessWidget {
             height: 2,
           ),
           Text(
-            '@price',
+            formatCurrency(price),
             style: greyTextStyle.copyWith(
               fontWeight: regular,
               fontSize: 12,
